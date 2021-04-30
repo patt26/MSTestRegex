@@ -9,44 +9,45 @@ namespace MSTestRegex
 {
    public class Name
     {
-        string Name_Validator = "^[A-Z]{1}[a-z]{3,}$";
+        
+       const string NAME_VALIDATOR = "^[A-Z]{1}[a-z]{3,}$";
 
         public bool ValidateName(string result)
         {
-            return Regex.IsMatch(result, Name_Validator);
+            return Regex.IsMatch(result, NAME_VALIDATOR);
         }
         public bool ValidateName1(string result1)
         {
-            return Regex.IsMatch(result1, Name_Validator);
+            return Regex.IsMatch(result1, NAME_VALIDATOR);
         }
     }
     public class Password
     {
-        string PasswordValidator = "(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+]).{8,}$";
+        const string PASSWORD_VALIDATOR = "(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+]).{8,}$";
 
         public bool Validate(string name)
         {
-            return Regex.IsMatch(name, PasswordValidator);
+            return Regex.IsMatch(name, PASSWORD_VALIDATOR);
         }
     }
     public class PhoneNum
     {
-        string PhoneNoValidator = "^[91]{2}[ ]*[0-9]{10}$";
+       const string PHONE_NO_VALIDATOR = "^[91]{2}[ ]*[0-9]{10}$";
 
         public bool PhoneValidator(string name)
         {
-            return Regex.IsMatch(name, PhoneNoValidator);
+            return Regex.IsMatch(name, PHONE_NO_VALIDATOR);
         }
 
        
     }
     public class EmailId
    {
-        string EmailIdValidator = "^[a-zA-Z0-9]+([.]{1}[a-zA-Z0-9]+)?[@]{1}[a-zA-Z]+[.][A-Za-z]{3}$";
+        string EMAIL_VALIDATOR = "^[a-zA-Z0-9]+([.]{1}[a-zA-Z0-9]+)?[@]{1}[a-zA-Z]+[.][A-Za-z]{3}$";
 
         public bool ValidateEmail(string name)
         {
-            return Regex.IsMatch(name, EmailIdValidator);
+            return Regex.IsMatch(name, EMAIL_VALIDATOR);
         }
    }
 }
