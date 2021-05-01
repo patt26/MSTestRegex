@@ -2,6 +2,7 @@
 using MSTestRegex;
 using System;
 using System.Text.RegularExpressions;
+using static MSTestRegex.ReflectionPurpose;
 
 namespace UnitTestProject1
 {

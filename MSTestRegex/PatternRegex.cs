@@ -7,47 +7,54 @@ using System.Threading.Tasks;
 
 namespace MSTestRegex
 {
-   public class Name
+    public class ReflectionPurpose
     {
-        
-       const string NAME_VALIDATOR = "^[A-Z]{1}[a-z]{3,}$";
 
-        public bool ValidateName(string result)
+
+        public class Name
         {
-            return Regex.IsMatch(result, NAME_VALIDATOR);
+
+            const string NAME_VALIDATOR = "^[A-Z]{1}[a-z]{3,}$";
+
+            public bool ValidateName(string result)
+            {
+                return Regex.IsMatch(result, NAME_VALIDATOR);
+            }
+            public bool ValidateName1(string result1)
+            {
+                return Regex.IsMatch(result1, NAME_VALIDATOR);
+            }
         }
-        public bool ValidateName1(string result1)
+        public class Password
         {
-            return Regex.IsMatch(result1, NAME_VALIDATOR);
+            const string PASSWORD_VALIDATOR = "(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+]).{8,}$";
+
+            public bool Validate(string name)
+            {
+                return Regex.IsMatch(name, PASSWORD_VALIDATOR);
+            }
+        }
+        public class PhoneNum
+        {
+            const string PHONE_NO_VALIDATOR = "^[91]{2}[ ]*[0-9]{10}$";
+
+            public bool PhoneValidator(string name)
+            {
+                return Regex.IsMatch(name, PHONE_NO_VALIDATOR);
+            }
+
+
+        }
+        public class EmailId
+        {
+            string EMAIL_VALIDATOR = "^[a-zA-Z0-9]+([.]{1}[a-zA-Z0-9]+)?[@]{1}[a-zA-Z]+[.][A-Za-z]{3}$";
+
+            public bool ValidateEmail(string name)
+            {
+                return Regex.IsMatch(name, EMAIL_VALIDATOR);
+            }
         }
     }
-    public class Password
-    {
-        const string PASSWORD_VALIDATOR = "(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+]).{8,}$";
-
-        public bool Validate(string name)
-        {
-            return Regex.IsMatch(name, PASSWORD_VALIDATOR);
-        }
-    }
-    public class PhoneNum
-    {
-       const string PHONE_NO_VALIDATOR = "^[91]{2}[ ]*[0-9]{10}$";
-
-        public bool PhoneValidator(string name)
-        {
-            return Regex.IsMatch(name, PHONE_NO_VALIDATOR);
-        }
-
-       
-    }
-    public class EmailId
-   {
-        string EMAIL_VALIDATOR = "^[a-zA-Z0-9]+([.]{1}[a-zA-Z0-9]+)?[@]{1}[a-zA-Z]+[.][A-Za-z]{3}$";
-
-        public bool ValidateEmail(string name)
-        {
-            return Regex.IsMatch(name, EMAIL_VALIDATOR);
-        }
-   }
 }
+
+
