@@ -26,7 +26,7 @@ namespace MSTestRegex
                         {
                             PatternRegex FirstName = new PatternRegex();
                             Console.Write("Enter 1ST Name: ");
-                            bool result = FirstName.ValidateName(Console.ReadLine(),PatternRegex.NAME_VALIDATOR);
+                            bool result = FirstName.ValidateName(Console.ReadLine());
                             Console.WriteLine(result);
                             if (result != true)
                             {
@@ -42,7 +42,7 @@ namespace MSTestRegex
                         {
                             PatternRegex lastname = new PatternRegex();
                             Console.WriteLine("Enter Last Name: ");
-                            bool LastName = lastname.ValidateName1(Console.ReadLine(),PatternRegex.NAME_VALIDATOR);
+                            bool LastName = lastname.ValidateName1(Console.ReadLine());
                             Console.Write(LastName);
                             if (LastName != true)
                             {
@@ -61,7 +61,7 @@ namespace MSTestRegex
                             PatternRegex Email = new PatternRegex();
                             Console.Write("Enter Email ID - ");
                             string EmailId = Console.ReadLine();
-                            bool result = Email.ValidateEmail(EmailId,PatternRegex.EMAIL_VALIDATOR);
+                            bool result = Email.ValidateEmail(EmailId);
                             Console.WriteLine(result);
 
                             if (result != true)
@@ -82,7 +82,7 @@ namespace MSTestRegex
                             PatternRegex MobNum = new PatternRegex();
                             Console.Write("Enter Mobile Number - ");
                             string PhoneNum = Console.ReadLine();
-                            bool result = MobNum.PhoneValidator(PhoneNum,PatternRegex.PHONE_NO_VALIDATOR);
+                            bool result = MobNum.PhoneValidator(PhoneNum);
                             Console.WriteLine(result);
 
                             if (result != true)
@@ -103,7 +103,7 @@ namespace MSTestRegex
                             PatternRegex password = new PatternRegex();
                             Console.Write("Enter Password - ");
                             string Password = Console.ReadLine();
-                            bool result = password.Validate(Password,PatternRegex.PASSWORD_VALIDATOR);
+                            bool result = password.Validate(Password);
                             Console.WriteLine(result);
 
                             if (result != true)

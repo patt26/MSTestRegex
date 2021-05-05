@@ -19,15 +19,15 @@ namespace MSTestRegex
             public const string EMAIL_VALIDATOR = "^[a-zA-Z0-9]+([.]{1}[a-zA-Z0-9]+)?[@]{1}[a-zA-Z]+[.][A-Za-z]{3}$";
 
 
-            public Func<string, string, bool> ValidateName = (FirstName, NAME_VALIDATOR) => Regex.IsMatch(FirstName, NAME_VALIDATOR);
+            public Func<string, bool> ValidateName = (FirstName) => Regex.IsMatch(FirstName, NAME_VALIDATOR);
 
-            public Func<string, string, bool> ValidateName1 = (LastName, NAME_VALIDATOR) => Regex.IsMatch(LastName, NAME_VALIDATOR);
+            public Func<string, bool> ValidateName1 = (LastName) => Regex.IsMatch(LastName, NAME_VALIDATOR);
 
-            public Func<string, string, bool> Validate = (Password, PASSWORD_VALIDATOR) => Regex.IsMatch(Password, PASSWORD_VALIDATOR);
+            public Func<string, bool> Validate = (Password) => Regex.IsMatch(Password, PASSWORD_VALIDATOR);
 
-            public Func<string, string, bool> PhoneValidator = (PhoneNum, PHONE_NO_VALIDATOR) => Regex.IsMatch(PhoneNum, PHONE_NO_VALIDATOR);
+            public Func<string, bool> PhoneValidator = (PhoneNum) => Regex.IsMatch(PhoneNum, PHONE_NO_VALIDATOR);
 
-            public Func<string, string, bool> ValidateEmail = (EmailId, EMAIL_VALIDATOR) => Regex.IsMatch(EmailId, EMAIL_VALIDATOR);
+            public Func<string, bool> ValidateEmail = (EmailId) => Regex.IsMatch(EmailId, EMAIL_VALIDATOR);
 
         }
     }
