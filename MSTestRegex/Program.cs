@@ -15,8 +15,8 @@ namespace MSTestRegex
         }
         static void Main(string[] args)
         {
-            Console.WriteLine("Enter Choice: \n 1: Name Validator\n 2: Email Validator\n 3: Mobile Number Validator\n 4: Password Validator\n 5:Properties");
-            int choice = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Enter Choice: \n 1: Name Validator\n 2: Email Validator\n 3: Mobile Number Validator\n 4: Password Validator\n 5:Properties");
+                int choice = Convert.ToInt32(Console.ReadLine());
             try
             {
                 switch (choice)
@@ -24,9 +24,9 @@ namespace MSTestRegex
                     case 1:
                         try
                         {
-                            Name pattern = new Name();
+                            PatternRegex FirstName = new PatternRegex();
                             Console.Write("Enter 1ST Name: ");
-                            bool result = pattern.ValidateName(Console.ReadLine());
+                            bool result = FirstName.ValidateName(Console.ReadLine(),PatternRegex.NAME_VALIDATOR);
                             Console.WriteLine(result);
                             if (result != true)
                             {
@@ -40,11 +40,11 @@ namespace MSTestRegex
                         }
                         try
                         {
-                            Name pattern0 = new Name();
+                            PatternRegex lastname = new PatternRegex();
                             Console.WriteLine("Enter Last Name: ");
-                            bool result1 = pattern0.ValidateName1(Console.ReadLine());
-                            Console.Write(result1);
-                            if (result1 != true)
+                            bool LastName = lastname.ValidateName1(Console.ReadLine(),PatternRegex.NAME_VALIDATOR);
+                            Console.Write(LastName);
+                            if (LastName != true)
                             {
                                 throw new CostomException("Check Input");
                             }
@@ -58,13 +58,13 @@ namespace MSTestRegex
                     case 2:
                         try
                         {
-                            EmailId pattern1 = new EmailId();
+                            PatternRegex Email = new PatternRegex();
                             Console.Write("Enter Email ID - ");
-                            string name = Console.ReadLine();
-                            bool result2 = pattern1.ValidateEmail(name);
-                            Console.WriteLine(result2);
+                            string EmailId = Console.ReadLine();
+                            bool result = Email.ValidateEmail(EmailId,PatternRegex.EMAIL_VALIDATOR);
+                            Console.WriteLine(result);
 
-                            if (result2 != true)
+                            if (result != true)
                             {
                                 throw new CostomException("Check Input");
                             }
@@ -79,13 +79,13 @@ namespace MSTestRegex
                     case 3:
                         try
                         {
-                            PhoneNum pattern3 = new PhoneNum();
+                            PatternRegex MobNum = new PatternRegex();
                             Console.Write("Enter Mobile Number - ");
-                            string name1 = Console.ReadLine();
-                            bool result3 = pattern3.PhoneValidator(name1);
-                            Console.WriteLine(result3);
+                            string PhoneNum = Console.ReadLine();
+                            bool result = MobNum.PhoneValidator(PhoneNum,PatternRegex.PHONE_NO_VALIDATOR);
+                            Console.WriteLine(result);
 
-                            if (result3 != true)
+                            if (result != true)
                             {
                                 throw new CostomException("Check Input");
                             }
@@ -100,13 +100,13 @@ namespace MSTestRegex
                     case 4:
                         try
                         {
-                            Password pattern4 = new Password();
+                            PatternRegex password = new PatternRegex();
                             Console.Write("Enter Password - ");
-                            string name2 = Console.ReadLine();
-                            bool result4 = pattern4.Validate(name2);
-                            Console.WriteLine(result4);
+                            string Password = Console.ReadLine();
+                            bool result = password.Validate(Password,PatternRegex.PASSWORD_VALIDATOR);
+                            Console.WriteLine(result);
 
-                            if (result4 != true)
+                            if (result != true)
                             {
                                 throw new CostomException("Check Input");
                             }
@@ -121,6 +121,7 @@ namespace MSTestRegex
                     case 5:
                         ReflectionOnRegex.ReflectionTest();
                         break;
+                   
                 }
 
             }
